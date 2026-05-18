@@ -575,16 +575,21 @@
     <div class="contact-detail"><div class="cd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg></div><div><p class="cd-label">Service Area</p><p class="cd-val">Central Texas Region</p></div></div>
   </div>
   <div class="reveal reveal-delay-1">
+    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="subject" data-remove-prefix value="New Inquiry from %{formName} — The Trash Collectors">
+    <p style="display:none"><input name="bot-field"></p>
     <div class="form-row">
-      <div class="form-group"><label>First Name</label><input type="text" placeholder="First name"></div>
-      <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"></div>
+      <div class="form-group"><label>First Name</label><input type="text" name="first-name" placeholder="First name"></div>
+      <div class="form-group"><label>Last Name</label><input type="text" name="last-name" placeholder="Last name"></div>
     </div>
-    <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
-    <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(512) 000-0000"></div>
-    <div class="form-group"><label>Property Size</label><select><option value="" disabled selected>Select unit count</option><option>Under 50 units</option><option>50 – 150 units</option><option>150 – 300 units</option><option>300+ units</option></select></div>
-    <div class="form-group"><label>Service Interest</label><select><option value="" disabled selected>Select a service</option><option>Doorstep Valet Collection</option><option>Recycling Program</option><option>Bulk Item Removal</option><option>Power Washing</option><option>Dumpster Monitoring & Overflow Prevention</option><option>Full Property Suite</option></select></div>
-    <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your property…"></textarea></div>
-    <button class="form-submit" id="submitBtn">Submit Inquiry →</button>
+    <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com"></div>
+    <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(512) 000-0000"></div>
+    <div class="form-group"><label>Property Size</label><select name="property-size"><option value="" disabled selected>Select unit count</option><option>Under 50 units</option><option>50 – 150 units</option><option>150 – 300 units</option><option>300+ units</option></select></div>
+    <div class="form-group"><label>Service Interest</label><select name="service-interest"><option value="" disabled selected>Select a service</option><option>Doorstep Valet Collection</option><option>Recycling Program</option><option>Bulk Item Removal</option><option>Power Washing</option><option>Dumpster Monitoring & Overflow Prevention</option><option>Full Property Suite</option></select></div>
+    <div class="form-group"><label>Message</label><textarea name="message" placeholder="Tell us about your property…"></textarea></div>
+    <button class="form-submit" type="submit" id="submitBtn">Submit Inquiry →</button>
+    </form>
   </div>
 </section>
 
